@@ -1,0 +1,6 @@
+SELECT DISTINCT p.Name 
+FROM Employee e 
+JOIN Employee p 
+ON e.ManagerId = p.Id  
+GROUP BY e.ManagerId
+Having COUNT(e.ManagerId) >=5 ;
