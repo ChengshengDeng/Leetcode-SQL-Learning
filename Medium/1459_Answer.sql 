@@ -1,0 +1,30 @@
+SELECT 
+      a.id AS p1,
+     b.id AS p2,
+    ABS(a.x_value - b.x_value) * ABS(a.y_value - b.y_value) AS area 
+FROM Points a 
+JOIN Points b 
+ON a.id !=b.id and a.id < b.id
+WHERE ABS(a.x_value - b.x_value) * ABS(a.y_value - b.y_value) !=0 
+ORDER BY area DESC, 1,2 ASC 
+
+
+
+
+
+   /*  
+  SELECT a.id1 as p1, a.id2 as p2, 
+  (ABS(a.x1_value - a.x2_value) * ABS(a.y1_value - a.y2_value)) AS area
+  FROM(SELECT 
+            p1.id as id1, p1.x_value as x1_value , 
+             p1.y_value as y1_value, 
+        p2.id as id2, 
+       p2.x_value as x2_value, 
+       p2.y_value  as y2_value
+      FROM Points p1 
+      CROSS JOIN Points p2 
+      WHERE p1.id < p2.id) a
+      HAVING area > 0 
+      ORDER BY area desc, p1,p2;  
+      */ 
+   
