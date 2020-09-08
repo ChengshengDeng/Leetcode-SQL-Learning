@@ -1,0 +1,14 @@
+SELECT a.name AS customer_name, 
+a.customer_id , 
+a.order_id  ,
+a.order_date 
+FROM(SELECT c.name, 
+     o.customer_id, 
+     o.order_id, 
+     o.order_date,
+     RANK()OVER(PARTITION BY o.customer_id ORDER BY o.order_date DESC) rnk 
+     FROM Orders o 
+     JOIN Customers c 
+     ON o.customer_id = c.customer_id )a
+     WHERE a.rnk = 1 OR a.rnk = 2 OR a.rnk = 3 
+     ORDER BY 1 ASC, 2 ASC,4 DESC 
