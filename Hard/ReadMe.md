@@ -1,2 +1,2 @@
 ## Hard  
- This section is SQL interview problem on hard level.
+ This section is SQL interview problems on hard level. 
