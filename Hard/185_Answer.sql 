@@ -1,0 +1,12 @@
+SELECT a.Department, 
+a.Employee, 
+a.Salary
+FROM( 
+SELECT d.Name AS Department, 
+e.Name AS Employee, 
+Salary,
+DENSE_RANK() OVER(PARTITION BY e.DepartmentId ORDER BY Salary DESC) rnk
+FROM Employee e 
+JOIN Department d 
+ON e.DepartmentId = d.Id ) a 
+WHERE a.rnk = 1 OR a.rnk = 2 OR a.rnk =3
