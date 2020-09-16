@@ -1,0 +1,9 @@
+WITH temp as (
+    SELECT Id, Month, Salary, 
+        DENSE_RANK() OVER(PARTITION BY Id ORDER BY Month DESC ) rnk
+    FROM Employee ) 
+
+
+SELECT Id, Month, SUM(Salary) OVER(PARTITION BY Id ORDER BY Month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW ) Salary
+FROM temp WHERE rnk !=1 
+ORDER BY 1 ASC, 2 DESC 
