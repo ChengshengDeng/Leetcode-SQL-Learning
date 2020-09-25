@@ -24,8 +24,9 @@ For example, given the above Scores table, your query should generate the follow
 +-------+---------+
 Important Note: For MySQL solutions, to escape reserved words used as column names, you can use an apostrophe before and after the keyword. For example `Rank`.
 
-```
+#-----
+
 SELECT Score, 
 DENSE_RANK() OVER(ORDER BY Score DESC) `Rank`
 FROM Scores 
-```
+
