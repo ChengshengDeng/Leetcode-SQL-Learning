@@ -33,7 +33,9 @@ you can use an apostrophe before and after the keyword. For example `Rank`.
 
 ```
 
-* This is the basic window function question and we just need to know the difference between `RANK()` and `DENSE_RANK()`. We use `dense_rank()` here because the question asks to use the consecutive integer to rank. FOllowing is our my answer.  
+* This is the basic window function question and we just need to know the difference between `RANK()` and `DENSE_RANK()`. We use `dense_rank()` here because the question asks to use the consecutive integer to rank. 
+
+## Answer
 
 ```
 SELECT Score, 
