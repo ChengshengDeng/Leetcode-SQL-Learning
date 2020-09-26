@@ -24,7 +24,7 @@ For example, given the above Employee table, the nth highest salary where n = 2 
 * This Question is very similar to 178. And again, be careful with `Rank()` and `DENSE_RANK()`. 
 * The difference is that we need to rank the salary first and then `SELECT` the Salary with rank = n 
 
-HERE is the Answer: 
+## Answer 
 
 ```
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
