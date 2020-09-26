@@ -21,7 +21,8 @@ The Department table holds all departments of the company.
 | 1  | IT       |
 | 2  | Sales    |
 +----+----------+
-Write a SQL query to find employees who have the highest salary in each of the departments. For the above tables, your SQL query should return the following rows (order of rows does not matter).
+Write a SQL query to find employees who have the highest salary in each of the departments.
+For the above tables, your SQL query should return the following rows (order of rows does not matter).
 
 +------------+----------+--------+
 | Department | Employee | Salary |
