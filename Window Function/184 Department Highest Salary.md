@@ -43,7 +43,7 @@ For this question, there are two points we need to know how to use.
 * `RANK()`
 
 
-Following is my answer:  
+## Answer 
 
 ```
 WITH temp AS ( SELECT e.Name AS emp, e.Salary, e.DepartmentId, d.Name, 
