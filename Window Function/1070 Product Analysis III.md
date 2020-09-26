@@ -61,7 +61,7 @@ Result table:
 ```
 * For this question, we need to use `RANK()` to get the first_year. Then we can select the product sales in first year. 
 
-Followin is my answer. 
+## Answer. 
 
 ```
 WITH temp AS ( 
