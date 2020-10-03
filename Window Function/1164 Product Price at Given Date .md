@@ -51,7 +51,8 @@ For this question, we need to do following steps to solve the problems.
 
 ``` 
 WITH temp AS(
-    SELECT *, RANK()OVER(PARTITION BY product_id ORDER BY change_date DESC ) rnk         FROM Products WHERE change_date <='2019-08-16')
+    SELECT *, RANK()OVER(PARTITION BY product_id ORDER BY change_date DESC ) rnk        
+    FROM Products WHERE change_date <='2019-08-16')
    
 
 SELECT p.product_id,IFNULL(t.new_price,10) AS price 
