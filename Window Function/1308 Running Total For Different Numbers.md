@@ -79,16 +79,10 @@ This is the form how we calculate the cummulative summation.
  WITH temp AS( SELECT  * , 
                        SUM(score_points)OVER(PARTITION BY gender ORDER BY day ASC) total 
              FROM Scores ) 
+             
 SELECT gender,day, total 
 FROM temp 
 GROUP BY 1,2
 ORDER BY 1,2
-
-
-             FROM Scores ) 
-SELECT gender,day, total 
-FROM temp 
-GROUP BY 1,2
-ORDER BY 1,2
-
+            
 ```
