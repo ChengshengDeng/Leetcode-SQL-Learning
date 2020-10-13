@@ -101,3 +101,25 @@ mouse's most recent order is in 2020-08-03, it was ordered only once this day.
 screen's most recent order is in 2020-08-29, it was ordered only once this day.
 The hard disk was never ordered and we don't include it in the result table.
 ```
+
+For this question, our idea is join `Orders` with `Products` tables and then `Partition BY` product_id and then order the product by the `order_date`.
+
+
+
+## Answer
+
+```
+WITH temp AS (
+              SELECT o.order_id, o.order_date, o.customer_id, o.product_id, 
+                     p.product_name, RANK()OVER(PARTITION BY  o.product_id ORDER BY o.order_date DESC) rnk 
+              FROM Orders o 
+              JOIN Products p 
+              ON o.product_id = p.product_id 
+             ) 
+    SELECT product_name, product_id, order_id, order_date 
+    FROM temp 
+    WHERE rnk = 1 
+    ORDER BY 1 ASC, 2 ASC, 3 ASC 
+
+
+```
